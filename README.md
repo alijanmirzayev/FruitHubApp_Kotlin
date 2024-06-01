@@ -1,5 +1,5 @@
-# Movie Android App Kotlin
-
+# FruitHub Android App Kotlin
+FruitHub is an Android application built with Kotlin for buying and selling fresh fruits online. It offers a user-friendly interface for browsing a variety of fruits, adding them to cart, and making secure purchases. Utilizing modern Android development practices, it ensures smooth navigation and seamless transactions for users.
 </br>
 
 ![](https://github.com/asgeri85/moviesAppAndroid/assets/79416442/9213ad98-d53c-4a5a-bead-1bd51f68d38d)
