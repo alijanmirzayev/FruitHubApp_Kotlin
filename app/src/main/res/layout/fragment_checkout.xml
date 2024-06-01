@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomsheet_bg"
+        tools:context=".ui.bottomsheet.CheckoutFragment">
+
+        <TextView
+            android:id="@+id/textViewDeliveryAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/brandon_med_500"
+            android:text="Delivery address"
+            android:textColor="@color/purple_4D"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/editTextDeliveryAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/input_bg"
+            android:fontFamily="@font/brandon_med_500"
+            android:hint="Enter your address"
+            android:inputType="text"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="#86869E"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewDeliveryAddress"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryAddress" />
+
+        <TextView
+            android:id="@+id/textViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/brandon_med_500"
+            android:text="Number we can call"
+            android:textColor="@color/purple_4D"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDeliveryAddress" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/input_bg"
+            android:fontFamily="@font/brandon_med_500"
+            android:hint="Enter your number"
+            android:inputType="phone"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="#86869E"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCheckoutSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textViewNumber"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumber" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCheckoutSubmit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/brandon_med_500"
+            android:paddingVertical="14dp"
+            android:text="Pay on Delivery"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
