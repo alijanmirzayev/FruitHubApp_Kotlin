@@ -71,5 +71,13 @@
         <action
             android:id="@+id/action_basketFragment_to_orderCompleteFragment"
             app:destination="@id/orderCompleteFragment" />
+        <action
+            android:id="@+id/action_basketFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/checkoutFragment"
+        android:name="com.alijan.fruithubapp.ui.bottomsheet.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" />
 </navigation>

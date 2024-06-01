@@ -25,6 +25,9 @@ class BasketFragment : BaseFragment<FragmentBasketBinding>() {
         binding.imageViewLeft.setOnClickListener {
             findNavController().popBackStack()
         }
+        binding.buttonBasketCheckout.setOnClickListener {
+            findNavController().navigate(BasketFragmentDirections.actionBasketFragmentToCheckoutFragment())
+        }
     }
 
     private fun calcAllBasketCost(basket: MutableList<Basket>): Double {

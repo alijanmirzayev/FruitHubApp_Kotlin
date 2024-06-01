@@ -8,7 +8,7 @@ fun ImageView.setImageFromUrl(url: String?) {
     Glide
         .with(this)
         .load(url)
-        .centerCrop()
+        .fitCenter()
         .into(this)
 }
 
