@@ -1,22 +1,18 @@
 package com.alijan.fruithubapp.ui.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.alijan.fruithubapp.data.model.Basket
 import com.alijan.fruithubapp.data.model.Product
-import com.alijan.fruithubapp.data.source.remote.BaseResponse
 import com.alijan.fruithubapp.data.repository.ProductRepository
+import com.alijan.fruithubapp.data.source.remote.BaseResponse
 import com.alijan.fruithubapp.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
-import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repository: ProductRepository) : BaseViewModel() {
+class HomeViewModel @Inject constructor(private val repository: ProductRepository) :
+    BaseViewModel() {
 
     private val _products = MutableLiveData<BaseResponse<List<Product>>>()
     val products: LiveData<BaseResponse<List<Product>>> get() = _products
@@ -43,7 +39,7 @@ class HomeViewModel @Inject constructor(private val repository: ProductRepositor
         )
     }
 
-    fun addItemToBasket(item: Basket){
+    fun addItemToBasket(item: Basket) {
         val currentBasket = _basket.value ?: ArrayList()
         currentBasket.add(item)
         _basket.value = currentBasket

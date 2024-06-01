@@ -30,7 +30,9 @@
         tools:layout="@layout/fragment_authentication" >
         <action
             android:id="@+id/action_authenticationFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -62,15 +64,18 @@
         android:id="@+id/orderCompleteFragment"
         android:name="com.alijan.fruithubapp.ui.ordercomplete.OrderCompleteFragment"
         android:label="fragment_order_complete"
-        tools:layout="@layout/fragment_order_complete" />
+        tools:layout="@layout/fragment_order_complete" >
+        <action
+            android:id="@+id/action_orderCompleteFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/basketFragment"
         android:name="com.alijan.fruithubapp.ui.basket.BasketFragment"
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket" >
-        <action
-            android:id="@+id/action_basketFragment_to_orderCompleteFragment"
-            app:destination="@id/orderCompleteFragment" />
         <action
             android:id="@+id/action_basketFragment_to_checkoutFragment"
             app:destination="@id/checkoutFragment" />
@@ -79,5 +84,11 @@
         android:id="@+id/checkoutFragment"
         android:name="com.alijan.fruithubapp.ui.bottomsheet.CheckoutFragment"
         android:label="fragment_checkout"
-        tools:layout="@layout/fragment_checkout" />
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkoutFragment_to_orderCompleteFragment"
+            app:destination="@id/orderCompleteFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </dialog>
 </navigation>
