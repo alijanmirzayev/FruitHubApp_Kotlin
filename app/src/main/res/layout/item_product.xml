@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.alijan.fruithubapp.data.model.Product" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="12dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clItemProduct"
+            android:paddingBottom="8dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewItemProduct"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="36dp"
+                setImageFromUrl="@{item.productImage}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewItemProductTitle"
+                android:minLines="2"
+                android:maxLines="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{item.productName}"
+                android:fontFamily="@font/brandon_med_500"
+                android:textSize="16sp"
+                android:textColor="@color/purple_4D"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewItemProduct" />
+
+            <TextView
+                android:id="@+id/textViewItemProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/brandon_reg_400"
+                android:text='@{"$" + item.productPrice}'
+                android:textColor="@color/orange_26"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/viewItemProductBasketBackground"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewItemProductBasketBackground" />
+
+            <View
+                android:id="@+id/viewItemProductBasketBackground"
+                android:background="@drawable/add_basket_bg"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewItemProductTitle" />
+
+            <ImageView
+                android:id="@+id/imageViewItemProductBasket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/viewItemProductBasketBackground"
+                app:layout_constraintEnd_toEndOf="@+id/viewItemProductBasketBackground"
+                app:layout_constraintStart_toStartOf="@+id/viewItemProductBasketBackground"
+                app:layout_constraintTop_toTopOf="@+id/viewItemProductBasketBackground"
+                app:srcCompat="@drawable/icon_plus" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

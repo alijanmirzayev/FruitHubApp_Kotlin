@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment" >
+
+    <ImageView
+        android:id="@+id/imageViewHomeBasket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/basket"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewHomeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewHomeTitle" />
+
+    <TextView
+        android:id="@+id/textViewHomeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="46dp"
+        android:fontFamily="@font/brandon_reg_400"
+        android:text="TextView"
+        android:textColor="@color/purple_4D"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineHomeVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHomeVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <EditText
+        android:id="@+id/editTextHomeSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/input_bg"
+        android:drawableStart="@drawable/search"
+        android:drawablePadding="14dp"
+        android:fontFamily="@font/brandon_med_500"
+        android:hint="Search for fruit salad combos"
+        android:inputType="text"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="14dp"
+        android:textColor="@color/black"
+        android:textColorHint="#86869E"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewHomeFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHomeTitle" />
+
+    <ImageView
+        android:id="@+id/imageViewHomeFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/icon_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextHomeSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextHomeSearch" />
+
+    <TextView
+        android:id="@+id/textViewHomeRecommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Recommended Combo"
+        android:fontFamily="@font/brandon_med_500"
+        android:textSize="24sp"
+        android:textColor="@color/purple_4D"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHomeSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHomeRecommend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHomeRecommend"
+        tools:listitem="@layout/item_product"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
