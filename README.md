@@ -23,6 +23,6 @@ FruitHub is an Android application built with Kotlin for buying and selling fres
 </br>
 
 ## 📷 Screens
-![](https://github.com/asgeri85/moviesAppAndroid/assets/79416442/c63bb8a8-e2d4-4a17-98e8-03050a229e24)
+![Splash/Onboarding](https://github.com/alijanmirzayev/FruitHubApp_Kotlin/assets/117976622/9c7b31d9-cfea-424b-9e8e-1b79f5557b0d)
 
 </br>
