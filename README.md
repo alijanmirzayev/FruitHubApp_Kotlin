@@ -2,6 +2,7 @@
 FruitHub is an Android application built with Kotlin for buying and selling fresh fruits online. It offers a user-friendly interface for browsing a variety of fruits, adding them to cart, and making secure purchases. Utilizing modern Android development practices, it ensures smooth navigation and seamless transactions for users.
 </br>
 ## 🛠 Built With
+- [MVVM](https://www.digitalocean.com/community/tutorials/android-mvvm-design-pattern)
 - [Coroutines & Flow](https://developer.android.com/kotlin/flow)
 - [Hilt for Dependency Injection](https://developer.android.com/training/dependency-injection/hilt-android)
 - [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started)
