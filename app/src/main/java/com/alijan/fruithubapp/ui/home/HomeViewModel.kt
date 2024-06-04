@@ -1,17 +1,21 @@
 package com.alijan.fruithubapp.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.alijan.fruithubapp.data.model.Basket
 import com.alijan.fruithubapp.data.model.Product
 import com.alijan.fruithubapp.data.repository.ProductRepository
-import com.alijan.fruithubapp.data.source.remote.BaseResponse
+import com.alijan.fruithubapp.data.api.BaseResponse
+import com.alijan.fruithubapp.data.repository.DataStoreRepository
 import com.alijan.fruithubapp.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repository: ProductRepository) :
+class HomeViewModel @Inject constructor(private val repository: ProductRepository, private val dataStoreRepository: DataStoreRepository) :
     BaseViewModel() {
 
     private val _products = MutableLiveData<BaseResponse<List<Product>>>()
@@ -20,8 +24,12 @@ class HomeViewModel @Inject constructor(private val repository: ProductRepositor
     private val _basket = MutableLiveData<MutableList<Basket>>()
     val basket: LiveData<MutableList<Basket>> get() = _basket
 
+    private val _name = MutableLiveData<String?>()
+    val name: LiveData<String?> get() = _name
+
     init {
         getAllProducts()
+        getName()
     }
 
     private fun getAllProducts() {
@@ -37,6 +45,23 @@ class HomeViewModel @Inject constructor(private val repository: ProductRepositor
                 _products.value = BaseResponse.Error(errorMessage)
             }
         )
+    }
+
+    private fun getName() {
+        viewModelScope.launch {
+            try {
+                val name = dataStoreRepository.getName()
+
+                if(name != null) {
+                    _name.value = name
+                }else {
+                    _name.value = ""
+                }
+
+            } catch (e: Exception){
+                Log.e("AuthenticationViewModel", e.localizedMessage.toString())
+            }
+        }
     }
 
     fun addItemToBasket(item: Basket) {

@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.alijan.fruithubapp.data.source.remote.BaseResponse
+import com.alijan.fruithubapp.data.api.BaseResponse
 import com.alijan.fruithubapp.databinding.FragmentHomeBinding
 import com.alijan.fruithubapp.ui.BaseFragment
 import com.alijan.fruithubapp.ui.adapters.ProductAdapter
@@ -14,7 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val viewModel by activityViewModels<HomeViewModel>()
-    private val args: HomeFragmentArgs by navArgs()
     private val recommendAdapter = ProductAdapter()
 
     override fun layoutInflater(): FragmentHomeBinding {
@@ -22,8 +21,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun setupUI() {
-        val text = "Hello ${args.name}, <b>What fruit salad combo do you want today?</b>"
-        binding.textViewHomeTitle.setText(Html.fromHtml(text))
 
         binding.rvHomeRecommend.adapter = recommendAdapter
         recommendAdapter.onClick = {
@@ -61,6 +58,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     dialog.dismiss()
                 }
             }
+        }
+
+        viewModel.name.observe(viewLifecycleOwner) { response ->
+            val text = "Hello ${response}, <b>What fruit salad combo do you want today?</b>"
+            binding.textViewHomeTitle.setText(Html.fromHtml(text))
         }
     }
 }

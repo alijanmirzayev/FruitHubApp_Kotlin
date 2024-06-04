@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.alijan.fruithubapp.data.model.Basket
 import com.alijan.fruithubapp.data.model.Product
-import com.alijan.fruithubapp.data.source.remote.BaseResponse
+import com.alijan.fruithubapp.data.api.BaseResponse
 import com.alijan.fruithubapp.data.repository.ProductRepository
 import com.alijan.fruithubapp.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

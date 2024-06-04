@@ -1,8 +1,7 @@
 package com.alijan.fruithubapp.data.repository
 
 import com.alijan.fruithubapp.data.model.Product
-import com.alijan.fruithubapp.data.source.remote.ApiManager
-import com.alijan.fruithubapp.data.source.remote.BaseResponse
+import com.alijan.fruithubapp.data.api.ApiManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response

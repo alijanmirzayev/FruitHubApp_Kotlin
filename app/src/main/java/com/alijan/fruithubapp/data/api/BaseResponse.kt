@@ -1,4 +1,4 @@
-package com.alijan.fruithubapp.data.source.remote
+package com.alijan.fruithubapp.data.api
 
 sealed class BaseResponse<T>(
     val data: T? = null,

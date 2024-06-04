@@ -5,7 +5,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.alijan.fruithubapp.data.source.remote.BaseResponse
+import com.alijan.fruithubapp.data.api.BaseResponse
 import com.alijan.fruithubapp.databinding.FragmentDetailBinding
 import com.alijan.fruithubapp.ui.BaseFragment
 import com.alijan.fruithubapp.ui.home.HomeViewModel

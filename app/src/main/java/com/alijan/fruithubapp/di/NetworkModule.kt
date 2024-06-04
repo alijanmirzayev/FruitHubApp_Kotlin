@@ -1,6 +1,6 @@
 package com.alijan.fruithubapp.di
 
-import com.alijan.fruithubapp.data.source.remote.ApiManager
+import com.alijan.fruithubapp.data.api.ApiManager
 import com.alijan.fruithubapp.util.Constant
 import dagger.Module
 import dagger.Provides

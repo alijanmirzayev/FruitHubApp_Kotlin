@@ -1,4 +1,4 @@
-package com.alijan.fruithubapp.data.source.remote
+package com.alijan.fruithubapp.data.api
 
 import com.alijan.fruithubapp.data.model.Product
 import retrofit2.Response
